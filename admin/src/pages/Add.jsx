@@ -66,7 +66,7 @@ const Add = ({ token }) => {
       className="flex flex-col w-full items-start gap-3"
     >
       <div>
-        <p className="mb-2">Upload Image</p>
+        <p className="mb-2 text-gray-800">Upload Image</p>
         <div className="flex gap-2">
           <label htmlFor="image1">
             <img
@@ -124,7 +124,7 @@ const Add = ({ token }) => {
       </div>
 
       <div className="w-full">
-        <p className="mb-2">Product name</p>
+        <p className="mb-2 text-gray-800">Product name</p>
         <input
           onChange={(e) => setName(e.target.value)}
           value={name}
@@ -136,7 +136,7 @@ const Add = ({ token }) => {
       </div>
 
       <div className="w-full">
-        <p className="mb-2">Product description</p>
+        <p className="mb-2 text-gray-800">Product description</p>
         <textarea
           onChange={(e) => setDescription(e.target.value)}
           value={description}
@@ -149,7 +149,7 @@ const Add = ({ token }) => {
 
       <div className="flex flex-col sm:flex-row gap-2 w-full sm:gap-8">
         <div>
-          <p className="mb-2">Product category</p>
+          <p className="mb-2 text-gray-800">Product category</p>
           <select
             onChange={(e) => setCategory(e.target.value)}
             className="w-full px-2 py-2"
@@ -161,7 +161,7 @@ const Add = ({ token }) => {
         </div>
 
         <div>
-          <p className="mb-2">Sub category</p>
+          <p className="mb-2 text-gray-800">Sub category</p>
           <select
             onChange={(e) => setSubCategory(e.target.value)}
             className="w-full px-3 py-2"
@@ -173,7 +173,7 @@ const Add = ({ token }) => {
         </div>
 
         <div>
-          <p className="mb-2">Product Price</p>
+          <p className="mb-2 text-gray-800">Product Price</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
             value={price}
@@ -185,7 +185,7 @@ const Add = ({ token }) => {
       </div>
 
       <div>
-        <p className="mb-2">Product Sizes</p>
+        <p className="mb-2 text-gray-800">Product Sizes</p>
         <div className="flex gap-3">
           <div
             onClick={() =>
@@ -198,7 +198,7 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("S") ? "bg-pink-200" : "bg-slate-200"
+                sizes.includes("S") ? "bg-gray-800 text-white" : "bg-slate-200"
               }  px-3 py-1 cursor-pointer`}
             >
               S
@@ -216,7 +216,7 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("M") ? "bg-pink-200" : "bg-slate-200"
+                sizes.includes("M") ? "bg-gray-800 text-white" : "bg-slate-200"
               }  px-3 py-1 cursor-pointer`}
             >
               M
@@ -234,7 +234,7 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("L") ? "bg-pink-200" : "bg-slate-200"
+                sizes.includes("L") ? "bg-gray-800 text-white" : "bg-slate-200"
               }  px-3 py-1 cursor-pointer`}
             >
               L
@@ -252,7 +252,7 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("XL") ? "bg-pink-200" : "bg-slate-200"
+                sizes.includes("XL") ? "bg-gray-800 text-white" : "bg-slate-200"
               }  px-3 py-1 cursor-pointer`}
             >
               XL
@@ -270,7 +270,7 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("XXL") ? "bg-pink-200" : "bg-slate-200"
+                sizes.includes("XXL") ? "bg-gray-800 text-white" : "bg-slate-200"
               }  px-3 py-1 cursor-pointer`}
             >
               XXL
@@ -285,13 +285,14 @@ const Add = ({ token }) => {
           checked={bestseller}
           type="checkbox"
           id="bestseller"
+          className="w-4 accent-black"
         />
         <label className="cursor-pointer" htmlFor="bestseller">
           Add to bestseller
         </label>
       </div>
 
-      <button type="submit" className="w-28 mt-4 py-3 bg-black text-white">
+      <button type="submit" className="w-28 mt-4 py-3 bg-black text-white hover:bg-slate-800">
         ADD
       </button>
     </form>
