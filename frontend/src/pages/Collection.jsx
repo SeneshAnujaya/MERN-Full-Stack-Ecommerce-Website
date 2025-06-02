@@ -74,39 +74,39 @@ const Collection = () => {
 
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-11 border-t mt-[3.5rem]'>
       {/* FILTER OPTION */}
       <div className='min-w-60'>
         <p onClick={() => setShowFilter(!showFilter)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>FILTERS
           <img src={assets.dropdown_icon} alt='' className={`h-3 sm:hidden ${showFilter ? 'rotate-90':''} `}/>
         </p>
         {/* CATEGROY FILTER */}
-        <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '': 'hidden'}`}>
+        <div className={`border border-gray-400 rounded-md pl-5 py-3 mt-6 ${showFilter ? '': 'hidden'}`}>
           <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
         <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
           <p className='flex gap-2'>
-            <input type='checkbox' className='w-3' value={'Men'} onChange={toggleCategory}/> Men
+            <input type='checkbox' className='w-3.5 accent-black' value={'Men'} onChange={toggleCategory}/> Men
           </p>
           <p className='flex gap-2'>
-            <input type='checkbox' className='w-3' value={'Women'} onChange={toggleCategory}/> Women
+            <input type='checkbox' className='w-3.5 accent-black' value={'Women'} onChange={toggleCategory}/> Women
           </p>
           <p className='flex gap-2'>
-            <input type='checkbox' className='w-3' value={'Kids'} onChange={toggleCategory}/> Kids
+            <input type='checkbox' className='w-3.5 accent-black' value={'Kids'} onChange={toggleCategory}/> Kids
           </p>
         </div>
         </div>
         {/* Subcategory Filter */}
-        <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '': 'hidden'}`}>
+        <div className={`border border-gray-400 rounded-md pl-5 py-3 my-5 ${showFilter ? '': 'hidden'}`}>
           <p className='mb-3 text-sm font-medium'>TYPE</p>
         <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
           <p className='flex gap-2'>
-            <input type='checkbox' className='w-3' value={'Topwear'} onChange={toggleSubCategory}/> Topwear
+            <input type='checkbox' className='w-3.5 accent-black' value={'Topwear'} onChange={toggleSubCategory}/> Topwear
           </p>
           <p className='flex gap-2'>
-            <input type='checkbox' className='w-3' value={'Bottomwear'} onChange={toggleSubCategory}/> Bottomwear
+            <input type='checkbox' className='w-3.5 accent-black' value={'Bottomwear'} onChange={toggleSubCategory}/> Bottomwear
           </p>
           <p className='flex gap-2'>
-            <input type='checkbox' className='w-3' value={'Winterwear'} onChange={toggleSubCategory}/> Winterwear
+            <input type='checkbox' className='w-3.5 accent-black' value={'Winterwear'} onChange={toggleSubCategory}/> Winterwear
           </p>
         </div>
         </div>
@@ -115,9 +115,9 @@ const Collection = () => {
       {/* RIGHT SIDE */}
       <div className='flex-1'>
         <div className='flex justify-between text-base sm:text-2xl mb-4'>
-          <Title text1={'ALL'} text2={'COLLECTIONS'}/>
+          <Title text1={'FULL'} text2={'COLLECTIONS'}/>
           {/* product sort */}
-          <select  onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
+          <select  onChange={(e) => setSortType(e.target.value)} className='border border-gray-500 text-sm px-2 rounded-md'>
             <option value="relavent">Sort by: Relavent</option>
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>

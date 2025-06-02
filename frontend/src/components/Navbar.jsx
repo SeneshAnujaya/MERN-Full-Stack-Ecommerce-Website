@@ -16,26 +16,27 @@ const Navbar = () => {
      
     }
   return (
-    <div className="flex items-center justify-between py-5 font-medium">
+    <div className="flex items-center justify-between py-5 font-medium w-full fixed bg-white left-0 right-0 top-0 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] border-b border-b-slate-100 z-50">
       <Link to="/">
-      <img src={assets.logo} className="w-36" alt="logo" />
+      {/* <img src={assets.logo} className="w-36" alt="logo" /> */}
+      <p className="text-2xl">MODVEIL</p>
       </Link>
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
+      <ul className="hidden sm:flex gap-5 text-sm text-gray-800">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-800 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-800 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>ABOUT</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-800 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p>CONTACT</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden " />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-800 hidden " />
         </NavLink>
       </ul>
 
@@ -64,7 +65,7 @@ const Navbar = () => {
         <img onClick={() => setVisible(true)} src={assets.menu_icon} className="w-5 cursor-pointer sm:hidden"/>
       </div>
       {/* Sidebar menu sm screen */}
-      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full':'w-0'}`}>
+      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? ' w-3/4 h-screen':'w-0'}`}>
         <div className="flex flex-col text-gray-600">
             <div onClick={() =>  setVisible(false)} className="flex items-center gap-4 p-3">
                 <img className="h-4 rotate-180" src={assets.dropdown_icon} alt=""/>

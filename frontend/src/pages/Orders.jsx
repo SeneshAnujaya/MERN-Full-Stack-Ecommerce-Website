@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import axios from "axios";
+import {  Package } from "lucide-react";
 
 const Orders = () => {
   const { backendUrl, token, currency } = useContext(ShopContext);
@@ -42,7 +43,7 @@ const Orders = () => {
   }, [token]);
 
   return (
-    <div className="border-t pt-16">
+    <div className="border-t pt-16 mt-10">
       <div className="text-2xl">
         <Title text1={"MY"} text2={"ORDERS"} />
       </div>
@@ -51,14 +52,14 @@ const Orders = () => {
         {orderData.map((item, index) => (
           <div
             key={index}
-            className="py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            className="py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border rounded-md mb-2 px-4 "
           >
             <div className="flex items-start gap-6 text-sm">
               <img className="w-16 sm:w-20" src={item.image[0]} alt="" />
               <div>
                 <p className="sm:text-base font-medium">{item.name}</p>
                 <div className="flex items-center gap-3 mt-1 text-base text-gray-700">
-                  <p>
+                  <p className="font-medium">
                     {currency}
                     {item.price}
                   </p>
@@ -80,13 +81,15 @@ const Orders = () => {
 
             <div className="md:w-1/2 flex justify-between">
               <div className="flex items-center gap-2">
+                {/* <ClipboardList className="w-5 h-5 text-gray-600"/> */}
                 <p className="min-w-2 h-2 rounded-full bg-green-500"></p>
                 <p className="text-sm md:text-base">{item.status}</p>
               </div>
               <button
                 onClick={loadOrderData}
-                className="border px-4 py-2 text-sm font-medium rounded-sm"
+                className="border border-gray-500 px-4 py-2 text-sm font-medium rounded-sm flex gap-1"
               >
+                <Package className="w-5 h-5"/>
                 Track Order
               </button>
             </div>

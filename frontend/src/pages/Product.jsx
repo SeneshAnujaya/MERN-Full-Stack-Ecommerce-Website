@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
+import { BadgeCheck, Banknote, RotateCcw } from 'lucide-react';
 
 const Product = () => {
   const { productId } = useParams();
@@ -26,7 +27,7 @@ const Product = () => {
   }, [productId, products]);
 
   return productData ? (
-    <div className="border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100">
+    <div className="border-t-2 pt-28 transition-opacity ease-in duration-500 opacity-100">
       {/* single Product data */}
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
         {/* Product image */}
@@ -37,14 +38,14 @@ const Product = () => {
                 onClick={() => setImage(item)}
                 src={item}
                 key={index}
-                className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer"
+                className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer hover:border hover:border-gray-500 rounded-md"
                 alt="product-image"
               />
             ))}
           </div>
 
           <div className="w-full sm:w-[80%]">
-            <img src={image} className="w-full h-auto" alt="" />
+            <img src={image} className="w-full h-auto rounded-md" alt="" />
           </div>
         </div>
         {/* Product information */}
@@ -62,7 +63,7 @@ const Product = () => {
             {currency}
             {productData.price}
           </p>
-          <p className="mt-5 text-gray-500 md:w-4/5">
+          <p className="mt-5 text-gray-600 md:w-4/5 font-light">
             {productData.description}
           </p>
           <div className="flex flex-col gap-4 my-8">
@@ -71,7 +72,7 @@ const Product = () => {
               {productData.sizes.map((item, index) => (
                 <button
                   onClick={() => setSize(item)}
-                  className={`border py-2 px-4 bg-gray-100 ${
+                  className={`border rounded-sm py-2 px-4 bg-gray-100 ${
                     item === size ? "border-gray-700" : ""
                   }`}
                   key={index}
@@ -83,15 +84,28 @@ const Product = () => {
           </div>
           <button
             onClick={() => addToCart(productData._id, size)}
-            className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
+            className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 hover:bg-gray-800"
           >
             ADD TO CART
           </button>
           <hr className="mt-8 sm:w-4/5" />
-          <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
-            <p>100% Original product.</p>
-            <p>Cash on delivery is available on this product.</p>
-            <p>Easy return and exchange policy witin 7 days.</p>
+          <div className="text-sm text-gray-700 mt-5 flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+               <BadgeCheck className="w-5 h-5 text-gray-800" />
+                   <p>100% Original product.</p>
+            </div>
+            <div className="flex items-center gap-2">
+               <Banknote className="w-5 h-5 text-gray-800" />
+                    <p>Cash on delivery is available on this product.</p>
+            </div>
+
+            <div className="flex items-center gap-2">
+                <RotateCcw className="w-5 h-5 text-gray-800" />
+                <p>Easy return and exchange policy witin 7 days.</p>
+            </div>
+        
+          
+           
           </div>
         </div>
       </div>
@@ -103,19 +117,9 @@ const Product = () => {
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
-            labore voluptas optio id cumque dolores incidunt dolorum animi, a
-            voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Quis aperiam velit atque officiis alias harum ea, non sit
-            accusamus natus. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Ab porro architecto aut dolorum. Optio eveniet quis laudantium
-            illo iusto numquam.
+            Elevate your everyday look with this premium-quality garment, designed to offer both comfort and timeless style. Made with durable materials and attention to detail, it's perfect for any occasion — from casual outings to laid-back evenings.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
-            labore voluptas optio id cumque dolores incidunt dolorum animi, a
-            voluptatibus!
-          </p>
+          
           <p></p>
         </div>
       </div>
