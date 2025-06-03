@@ -43,7 +43,7 @@ const Orders = () => {
   }, [token]);
 
   return (
-    <div className="border-t pt-16 mt-10">
+    <div className="border-t pt-16 mt-10 min-h-[530px]">
       <div className="text-2xl">
         <Title text1={"MY"} text2={"ORDERS"} />
       </div>
